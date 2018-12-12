@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MySoil</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <!-- <h1>Hello World!</h1> -->
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    <!-- We are using Node.js <script>document.write(process.versions.node)</script>,
+    Chromium <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>. -->
+  
+    <div class="grandParentContainer">
+      <div class="parentContainer">
+        <div class="childContainer">
+            <h1>MySoil</h1>
+            <p>MySoil adalah aplikasi yang dapat menentukan kualitas tanah berdasarkan parameter yang diberikan.</p>
+            <br><br>
+            <p>Silakan pilih metode parameter:</p>
+            <button type="button" class="left-home-btn btn btn-secondary">SSQI (Sederhana)</button>
+            <button type="button" class="right-home-btn btn btn-secondary">CSQI (Komprehensif)</button>
+        </div>
+      </div>
+    </div>
+
+    
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+  </body>
+</html>

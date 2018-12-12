@@ -1,0 +1,26 @@
+{
+  "name": "MySoil",
+  "version": "1.0.0",
+  "description": "Projek KOM335 - Sistem Informasi",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alipeu/MySoil.git"
+  },
+  "author": "alipeu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alipeu/MySoil/issues"
+  },
+  "homepage": "https://github.com/alipeu/MySoil#readme",
+  "devDependencies": {
+    "electron": "^3.0.8"
+  },
+  "dependencies": {
+    "angular": "^1.7.5",
+    "angular-route": "^1.7.5"
+  }
+}
