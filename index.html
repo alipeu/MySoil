@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>MySoil</title>
     <link rel="stylesheet" href="./styles.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
   </head>
   <body>
     <!-- <h1>Hello World!</h1> -->
@@ -19,8 +21,8 @@
             <p>MySoil adalah aplikasi yang dapat menentukan kualitas tanah berdasarkan parameter yang diberikan.</p>
             <br><br>
             <p>Silakan pilih metode parameter:</p>
-            <button type="button" class="left-home-btn btn btn-secondary">SSQI (Sederhana)</button>
-            <button type="button" class="right-home-btn btn btn-secondary">CSQI (Komprehensif)</button>
+            <button type="button" id="ssqiBtn" onclick="location.href='ssqi.html';" class="left-home-btn btn btn-secondary">SSQI (Sederhana)</a>
+            <button type="button" id="csqiBtn" onclick="location.href='csqi.html';" class="right-home-btn btn btn-secondary">CSQI (Komprehensif)</a>
         </div>
       </div>
     </div>

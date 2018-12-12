@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MySoil</title>
+    <link rel="stylesheet" href="./styles.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+
+  </head>
+  <body>
+    <div class="grandParentContainer">
+      <div class="parentContainer">
+        <div class="childContainer">
+          <h1>MySoil</h1>
+          <br>
+          <div class="form-group">
+            <input type="email" class="form-control" id="email" placeholder="Email" style="width:300px">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" id="password" placeholder="Password" style="width:300px">
+          </div>
+          <button type="button" id="logInBtn" class="login-btn btn btn-success" style="width:100px">Log In</button>
+          <button type="button" id="signUpBtn"class="signup-btn btn btn-info" style="width:100px">Sign Up</button>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+  </body>
+</html>
