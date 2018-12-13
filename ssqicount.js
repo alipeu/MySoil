@@ -20,7 +20,7 @@ hitungBtn.addEventListener('click', function() {
     //var slk = document.getElementById('slk').value;
     //var sc = document.getElementById('sc').value;
         
-    var cp1, cp2, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14;
+    var cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14;
 
     if(p1 < 5) cp1 = 0 * 0.09;
     else if(p1 < 10) cp1 = 1 * 0.09;
@@ -177,10 +177,17 @@ hitungBtn.addEventListener('click', function() {
         soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14).toFixed(2)
     }
     
-    var updates = {};
-    updates['/soil/' + sid] = data;
-    firebase.database().ref().update(updates);
+    if(data.p1 && data.p2 && data.p3 && data.p4 && data.p5 && data.p6 && data.p7 && data.p8 && data.p9 && data.p10 && data.p11 && data.p12 && data.p13 && data.p14) {
+        var updates = {};
+        updates['/soil/' + sid] = data;
+        firebase.database().ref().update(updates);
     
-    alert(data.soil_ind);
-    window.location.reload();
+        alert(data.soil_ind);
+        window.location.reload();
+    }
+    else {
+        console.log('empty');
+        alert('Ada field yang kosong');
+    }
+    
 });
