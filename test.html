@@ -3,12 +3,74 @@
  <head>
  <meta charset="utf-8">
  <title>Sample CRUD Firebase Javascript - 01 Read Data</title>
+ <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
  <!-- <link rel="stylesheet" href="style.css"> -->
  </head>
  <body>
+  <a href="index.html">back</a>
+
+  <h3>Input data tanah</h3>
+  <input id="p1" type="text" placeholder="p1">
+  <input id="p2" type="text" placeholder="p2">
+  <select id="p3" class="form-control form-control-lg">
+    <option value="" selected="">Drainase</option>
+    <option value="Sangat cepat">Sangat cepat</option>
+    <option value="Cepat">Cepat</option>
+    <option value="Agak cepat">Agak cepat</option>
+    <option value="Sedang">Sedang</option>
+    <option value="Agak buruk">Agak buruk</option>
+    <option value="Buruk">Buruk</option>
+    <option value="Sangat buruk">Sangat buruk</option>
+    <option value="Tergenang">Tergenang</option>
+  </select>
+  <select id="p4" class="form-control form-control-lg">
+    <option value="" selected="">Erosi</option>
+    <option value="Tidak ada">Tidak ada</option>
+    <option value="Sangat rendah">Sangat rendah</option>
+    <option value="Rendah">Rendah</option>
+    <option value="Agak rendah">Agak rendah</option>
+    <option value="Sedang">Sedang</option>
+    <option value="Agak tinggi">Agak tinggi</option>
+    <option value="Tinggi">Tinggi</option>
+    <option value="Sangat tinggi">Sangat tinggi</option>
+  </select>
+  <select id="p5" class="form-control form-control-lg">
+    <option value="" selected="">Tekstur</option>
+    <option value="Pasir">Pasir</option>
+    <option value="Pasir berlempung">Pasir berlempung</option>
+    <option value="Klei berat">Klei berat</option>
+    <option value="Lempung berpasir">Lempung berpasir</option>
+    <option value="Klei">Klei</option>
+    <option value="Klei berpasir">Klei berpasir</option>
+    <option value="Klei berdebu">Klei berdebu</option>
+    <option value="Debu">Debu</option>
+    <option value="Lempung berliat">Lempung berliat</option>
+    <option value="Lempung klei berdebu">Lempung klei berdebu</option>
+    <option value="Lempung klei berpasir">Lempung klei berpasir</option>
+    <option value="Lempung berdebu">Lempung berdebu</option>
+    <option value="Lempung">Lempung</option>
+  </select>
+  
+  <input id="p6" type="text" placeholder="p6">
+  <input id="p7" type="text" placeholder="p7">
+  <input id="p8" type="text" placeholder="p8">
+  <input id="p9" type="text" placeholder="p9">
+  <input id="p10" type="text" placeholder="p10">
+  
+  <input id="p11" type="text" placeholder="p11">
+  <input id="p12" type="text" placeholder="p12">
+  <input id="p13" type="text" placeholder="p13">
+  <input id="p14" type="text" placeholder="p14">
+  <input id="ad" type="text" placeholder="ad">
+  
+  <input id="slk" type="text" placeholder="slk">
+  <input id="sc" type="text" placeholder="sc">
+  <br>
+  <input type="button" value="Save" id="hitungBtn" />
+  <br><br><br>
+
   <h3>Daftar Tanah yang Kualitasnya sudah dihitung</h3>
- 
-  <table id="tbl_users_list" border="1">
+  <table id="tbl_soil_list" border="1">
    <tr>
     <td>Indeks Kualitas</td>
     <td>Asal Daerah</td>
@@ -30,37 +92,14 @@
     <td>P14</td>
    </tr>
   </table>
-  <br>
-  <br>
-  <br>
-  <input id="p1" type="text" placeholder="p1">
-  <input id="p2" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="p3" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="p4" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="p5" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
+  <br><br><br>
   
-  <input id="p6" type="text" placeholder="p6">
-  <input id="p7" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="p8" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="p9" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="p10" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  
-  <input id="p11" type="text" placeholder="p11">
-  <input id="p12" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="p13" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="p14" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <input id="ad" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  
-  <input id="slk" type="text" placeholder="slk">
-  <input id="sc" type="text" placeholder="Kedalaman Tanah Efektif (cm)">
-  <br>
-  <input type="button" value="Save" id="saveBtn" />
 
-
-  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
   <script>
     // You can also require other files to run in this process
     require('./renderer.js')
+    require('./ssqicount.js')
+    require('./readdata.js')
   </script>
   </body>
 

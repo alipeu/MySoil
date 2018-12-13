@@ -14,7 +14,7 @@
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>. -->
   
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:fixed;width:100%">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:fixed;width:100%;z-index:100">
       <span class="navbar-brand">MySoil</span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -22,11 +22,11 @@
     
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
           <li class="nav-item">
-            <a class="nav-link" href="data.html">Lihat data tersimpan</a>
+            <a class="nav-link" href="index.html">Home</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="data.html">Lihat data tersimpan <span class="sr-only">(current)</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="test.html">./sandbox</a>
@@ -50,24 +50,60 @@
       </div>
     </nav>
     
-    <div class="grandParentContainer">
+    <!-- <div class="grandParentContainer">
       <div class="parentContainer">
         <div class="childContainer">
-            <h1>MySoil</h1>
-            <p>MySoil adalah aplikasi yang dapat menentukan kualitas tanah berdasarkan parameter yang diberikan.</p>
-            <br><br>
-            <p>Silakan pilih metode parameter:</p>
-            <button type="button" id="ssqiBtn" onclick="location.href='ssqi.html';" class="left-home-btn btn btn-secondary">SSQI (Sederhana)</a>
-            <button type="button" id="csqiBtn" onclick="location.href='csqi.html';" class="right-home-btn btn btn-secondary">CSQI (Komprehensif)</a>
+            
         </div>
       </div>
-    </div>
+    </div> -->
 
+    <div class="data-wrapper" style="background-color: rgba(76, 175, 80, 0.8);">
+        <table id="tbl_soil_list" class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Indeks Kualitas</th>
+                <th scope="col">Asal Daerah</th>
+                <th scope="col">Sawah/Lahan Kering</th>
+                <th scope="col">P1</th>
+                <th scope="col">P2</th>
+                <th scope="col">P3</th>
+                <th scope="col">P4</th>
+                <th scope="col">P5</th>
+                <th scope="col">P6</th>
+                <th scope="col">P7</th>
+                <th scope="col">P8</th>
+                <th scope="col">P9</th>
+                <th scope="col">P10</th>
+                <th scope="col">P11</th>
+                <th scope="col">P12</th>
+                <th scope="col">P13</th>
+                <th scope="col">P14</th>
+              </tr>
+            </thead>
+            <!-- <tbody>
+              <tr class="table-light">
+                <th scope="row">Light</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+              <tr class="table-dark">
+                <th scope="row">Dark</th>
+                <td>Column content</td>
+                <td>Column content</td>
+                <td>Column content</td>
+              </tr>
+            </tbody> -->
+          </table> 
+    </div>
+    
     
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')
       require('./logout.js')
+      require('./readdata.js')
     </script>
   </body>
 </html>
