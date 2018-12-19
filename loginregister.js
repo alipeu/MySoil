@@ -1,4 +1,3 @@
-
 var logInBtn = document.getElementById('logInBtn');
 var signUpBtn = document.getElementById('signUpBtn');
 

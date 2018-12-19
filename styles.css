@@ -78,9 +78,9 @@ body {
   /*background-color: #4caf50;*/
   background-image: url("img/bg-img.jpg");
   background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center center;
-  background-size: cover;
+  background-attachment: fixed;
+  /* background-position: center center; */
+  /* background-size: cover; */
 }
 
 [tabindex="-1"]:focus {

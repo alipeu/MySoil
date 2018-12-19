@@ -1,30 +1,40 @@
+var qRadios = document.getElementsByName('qIndex');
+
+$('#qTest').click(function() {
+
+    var val1 = $('[name=rPType]:checked').val();
+    var val2 = $('[name=rSType]:checked').val();
+    $('tr').each(function() {
+        var p = $(this).find('.pType').text();
+        var s = $(this).find('.sType').text();
+        
+        if ((p == val1 && s == val2) || val2 == 'a') {
+            $(this).show();
+        } 
+        else if (p != '' && s != '') {
+            $(this).hide();
+        }
+    });
+});
+
+$('#sTest').click(function() {
+
+    var val2 = $('[name=rSType]:checked').val();
+    $('tr').each(function() {
+        var s = $(this).find('.sType').text();
+        
+        if (s == val2 || val2 == 'a') {
+            $(this).show();
+        } 
+        else if (s != '') {
+            $(this).hide();
+        }
+    });
+});
+
 var filtrTable = document.getElementById('filtered_table');
 var databaseRef = firebase.database().ref('soil');
 var rowIndex = 1;
-
-function getRadioVal(form, name) {
-    var val;
-    // get list of radio buttons with specified name
-    var radios = form.elements[name];
-    
-    // loop through list of radio buttons
-    for (var i=0, len=radios.length; i<len; i++) {
-        if ( radios[i].checked ) { // radio checked?
-            val = radios[i].value; // if so, hold its value in val
-            break; // and break out of for loop
-        }
-    }
-    return val; // return value of checked radio or undefined if none checked
-}
-
-document.getElementById('demoForm').onsubmit = function() {
-    // this (keyword) refers to form to which onsubmit attached
-    // 'ship' is name of radio button group
-    var val = getRadioVal(this, 'ship');
-    // display value obtained
-    alert(val);
-    // more code here ...
-}
 
 databaseRef.once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
@@ -50,6 +60,8 @@ databaseRef.once('value', function(snapshot) {
         var cellP12 = row.insertCell(15);
         var cellP13 = row.insertCell(16);
         var cellP14 = row.insertCell(17);
+        cellSType.setAttribute('class', 'sType');
+        cellPType.setAttribute('class', 'pType');
         cellQual.appendChild(document.createTextNode(childData.soil_ind));
         cellReg.appendChild(document.createTextNode(childData.asal_daerah));
         if(childData.slk_flag == 's') {

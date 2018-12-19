@@ -1,4 +1,9 @@
 var hitungBtn = document.getElementById('hitungBtn');
+var slk = 's';
+
+$("input[name='rSType']").change(function(){
+    slk = this.value;
+});
 
 hitungBtn.addEventListener('click', function() {
     var sid = firebase.database().ref().child('soil').push().key;
@@ -16,9 +21,8 @@ hitungBtn.addEventListener('click', function() {
     var p12 = document.getElementById('p12').value;
     var p13 = document.getElementById('p13').value;
     var p14 = document.getElementById('p14').value;
-    //var ad = document.getElementById('ad').value;
-    //var slk = document.getElementById('slk').value;
-    //var sc = document.getElementById('sc').value;
+    var ad = document.getElementById('ad').value;
+    var date = new Date();
         
     var cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14;
 
@@ -40,23 +44,14 @@ hitungBtn.addEventListener('click', function() {
     else if(p2 < 1.8) cp2 = 1 * 0.09;
     else cp2 = 0 * 0.09;
 
-    // if((p3 == 'Sangat cepat' && slk == 's') || (p3 == 'Tergenang' && slk == 'lk')) cp3 = 0 * 0.07;
-    // else if((p3 == 'Cepat' && slk == 's') || (p3 == 'Sangat buruk' && slk == 'lk')) cp3 = 1 * 0.07;
-    // else if((p3 == 'Agak cepat' && slk == 's') || (p3 == 'Buruk' && slk == 'lk')) cp3 = 2 * 0.07;
-    // else if((p3 == 'Sedang' && slk == 's') || (p3 == 'Agak buruk' && slk == 'lk')) cp3 = 3 * 0.07;
-    // else if((p3 == 'Agak buruk' && slk == 's') || (p3 == 'Sedang' && slk == 'lk')) cp3 = 4 * 0.07;
-    // else if((p3 == 'Buruk' && slk == 's') || (p3 == 'Agak cepat' && slk == 'lk')) cp3 = 5 * 0.07;
-    // else if((p3 == 'Sangat buruk' && slk == 's') || (p3 == 'Cepat' && slk == 'lk')) cp3 = 6 * 0.07;
-    // else if((p3 == 'Tergenang' && slk == 's') || (p3 == 'Sangat cepat' && slk == 'lk')) cp3 = 7 * 0.07;
-
-    if((p3 == 'Sangat cepat')) cp3 = 0 * 0.07;
-    else if((p3 == 'Cepat')) cp3 = 1 * 0.07;
-    else if((p3 == 'Agak cepat')) cp3 = 2 * 0.07;
-    else if((p3 == 'Sedang')) cp3 = 3 * 0.07;
-    else if((p3 == 'Agak buruk')) cp3 = 4 * 0.07;
-    else if((p3 == 'Buruk')) cp3 = 5 * 0.07;
-    else if((p3 == 'Sangat buruk')) cp3 = 6 * 0.07;
-    else if((p3 == 'Tergenang')) cp3 = 7 * 0.07;
+    if((p3 == 'Sangat cepat' && slk == 's') || (p3 == 'Tergenang' && slk == 'lk')) cp3 = 0 * 0.07;
+    else if((p3 == 'Cepat' && slk == 's') || (p3 == 'Sangat buruk' && slk == 'lk')) cp3 = 1 * 0.07;
+    else if((p3 == 'Agak cepat' && slk == 's') || (p3 == 'Buruk' && slk == 'lk')) cp3 = 2 * 0.07;
+    else if((p3 == 'Sedang' && slk == 's') || (p3 == 'Agak buruk' && slk == 'lk')) cp3 = 3 * 0.07;
+    else if((p3 == 'Agak buruk' && slk == 's') || (p3 == 'Sedang' && slk == 'lk')) cp3 = 4 * 0.07;
+    else if((p3 == 'Buruk' && slk == 's') || (p3 == 'Agak cepat' && slk == 'lk')) cp3 = 5 * 0.07;
+    else if((p3 == 'Sangat buruk' && slk == 's') || (p3 == 'Cepat' && slk == 'lk')) cp3 = 6 * 0.07;
+    else if((p3 == 'Tergenang' && slk == 's') || (p3 == 'Sangat cepat' && slk == 'lk')) cp3 = 7 * 0.07;
 
     if(p4 == 'Tidak ada') cp4 = 0 * 0.06;
     else if(p4 == 'Sangat rendah') cp4 = 1 * 0.06;
@@ -171,19 +166,21 @@ hitungBtn.addEventListener('click', function() {
         p12: p12,
         p13: p13,
         p14: p14,
-        //asal_daerah: ad,
-        //slk_flag: slk,
-        //sc_flag: sc,
-        soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14).toFixed(2)
+        asal_daerah: ad,
+        slk_flag: slk,
+        sc_flag: 's',
+        soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14).toFixed(2),
+        time: date
     }
     
-    if(data.p1 && data.p2 && data.p3 && data.p4 && data.p5 && data.p6 && data.p7 && data.p8 && data.p9 && data.p10 && data.p11 && data.p12 && data.p13 && data.p14) {
+    if(data.p1 && data.p2 && data.p3 && data.p4 && data.p5 && data.p6 && data.p7 && data.p8 && data.p9 && data.p10 && data.p11 && data.p12 && data.p13 && data.p14 && data.asal_daerah) {
+        console.log(data);
         var updates = {};
         updates['/soil/' + sid] = data;
-        firebase.database().ref().update(updates);
-    
-        alert(data.soil_ind);
-        window.location.reload();
+        firebase.database().ref().update(updates).then(function() {
+            alert("Your soil index quality is: " + data.soil_ind);
+            window.location.reload();
+        });
     }
     else {
         console.log('empty');

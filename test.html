@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
  <head>
- <meta charset="utf-8">
- <title>Sendeubokseu</title>
- <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
- <!-- <link rel="stylesheet" href="style.css"> -->
+  <meta charset="utf-8">
+  <title>Sendeubokseu</title>
+  <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
  </head>
  <body>
   <a href="index.html">back</a>
@@ -70,7 +69,7 @@
   <br><br>
 
   <h3>Daftar Tanah yang Kualitasnya sudah dihitung</h3>
-  <table id="test_table" border="1">
+  <table id="test_table" border="1" style="border-collapse: collapse;">
    <tr>
     <td>Indeks Kualitas</td>
     <td>Asal Daerah</td>
@@ -94,24 +93,16 @@
   </table>
   <br><br>
   
-  <h3>Search data</h3>
-  <form action="#" method="post" class="demoForm" id="demoForm">
-      <fieldset>
-          <legend>Demo: Get Value of Selected</legend>
-      
-      <p>Select a shipping method:</p>
-      <p>
-          <label><input type="radio" name="ship" value="std" checked /> Standard Ground</label>
-          <label><input type="radio" name="ship" value="2day" /> Second Day</label>
-          <label><input type="radio" name="ship" value="1day" /> Overnight</label>
-          <label><input type="radio" name="ship" value="hold" /> Pick up</label>
-      </p>
-      
-      <p><button type="button" name="getVal">Get Value of Selected</button></p>
-      
-      </fieldset>
-  </form>
-    <table id="filtered_table" border="1">
+  <h3>Filter data</h3>
+    <input type="radio" id="qr1" name="rPType" value="s" checked>SSQI
+    <input type="radio" id="qr2" name="rPType" value="c">CSQI
+    <input type="button" id="qTest" value="Try">
+    <br>
+    <input type="radio" id="sr1" name="rSType" value="Sawah" checked>Sawah  
+    <input type="radio" id="sr2" name="rSType" value="Lahan Kering">Lahan Kering
+    <input type="radio" id="sr3" name="rSType" value="a">Semua
+    <input type="button" id="sTest" value="Try">
+    <table id="filtered_table" border="1" style="border-collapse: collapse;">
         <tr>
          <td>Indeks Kualitas</td>
          <td>Asal Daerah</td>
@@ -139,6 +130,7 @@
 
   <script>
     // You can also require other files to run in this process
+    window.$ = window.jQuery = require('jquery');
     require('./renderer.js')
     require('./ssqicount.js')
     require('./readtest.js')
