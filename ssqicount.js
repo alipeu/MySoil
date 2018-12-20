@@ -178,13 +178,13 @@ hitungBtn.addEventListener('click', function() {
         var updates = {};
         updates['/soil/' + sid] = data;
         firebase.database().ref().update(updates).then(function() {
-            alert("Your soil index quality is: " + data.soil_ind);
+            alert("Indeks kualitas tanah Anda: " + data.soil_ind);
             window.location.reload();
         });
     }
     else {
-        console.log('empty');
         alert('Ada field yang kosong');
+        document.getElementById("warning").style.visibility = "visible";
     }
     
 });

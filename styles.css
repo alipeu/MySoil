@@ -9703,6 +9703,30 @@ html, body {
   margin: 10px;
 }
 
+.csqi-container {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+}
+
+.csqi-l {
+  width: 31%;
+  float: left;
+  margin: 10px;
+}
+
+.csqi-m {
+  width: 31%;
+  float: left;
+  margin: 10px;
+}
+
+.csqi-r {
+  width: 31%;
+  float: left;
+  margin: 10px;
+}
+
 .data-wrapper {
   overflow-x: auto;
   overflow-y: hidden;
@@ -9713,8 +9737,6 @@ html, body {
   transform: translate(0, 80px);
   margin: auto;
   padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 

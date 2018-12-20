@@ -14,7 +14,7 @@
     Chromium <script>document.write(process.versions.chrome)</script>,
     and Electron <script>document.write(process.versions.electron)</script>. -->
   
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="position:fixed;width:100%;z-index:100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="position: relative;width: 100%;z-index: 100">
       <span class="navbar-brand">MySoil</span>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -50,14 +50,20 @@
       </div>
     </nav>
     
-    <!-- <div class="grandParentContainer">
-      <div class="parentContainer">
-        <div class="childContainer">
-            
-        </div>
+    <div class="form-group">
+      <div class="custom-control custom-radio" style="display:inline;position: relative;left:0px">
+        <input type="radio" id="sr1" name="rSType" class="custom-control-input" value="Sawah" checked>
+        <label class="custom-control-label" for="sr1">Sawah</label>
       </div>
-    </div> -->
-
+      <div class="custom-control custom-radio" style="display:inline;position: relative;left:40px">
+        <input type="radio" id="sr2" name="rSType" class="custom-control-input" value="Lahan Kering">
+        <label class="custom-control-label" for="sr2">Lahan Kering</label>
+      </div>
+      <div class="custom-control custom-radio" style="display:inline;position: relative;left:40px">
+        <input type="radio" id="sr3" name="rSType" class="custom-control-input" value="a">
+        <label class="custom-control-label" for="sr3">Semua</label>
+      </div>
+    </div>
     <div class="data-wrapper" style="background-color: rgba(76, 175, 80, 0.8);">
         <table id="tbl_soil_list" class="table table-hover">
             <thead>
@@ -81,26 +87,13 @@
                 <th scope="col">P14</th>
               </tr>
             </thead>
-            <!-- <tbody>
-              <tr class="table-light">
-                <th scope="row">Light</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-              </tr>
-              <tr class="table-dark">
-                <th scope="row">Dark</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-              </tr>
-            </tbody> -->
           </table> 
     </div>
     
     
     <script>
       // You can also require other files to run in this process
+      window.$ = window.jQuery = require('jquery');
       require('./renderer.js')
       require('./logout.js')
       require('./readdata.js')
