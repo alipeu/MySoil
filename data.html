@@ -49,19 +49,32 @@
         </form>
       </div>
     </nav>
-    
-    <div class="form-group">
-      <div class="custom-control custom-radio" style="display:inline;position: relative;left:0px">
-        <input type="radio" id="sr1" name="rSType" class="custom-control-input" value="Sawah" checked>
-        <label class="custom-control-label" for="sr1">Sawah</label>
+    <div class="filter-container">
+      <div class="form-group">
+        <h4>Filter berdasarkan jenis parameter</h2>
+        <div class="custom-control custom-radio" style="display:inline;position: relative;left:0px">
+          <input type="radio" id="qr1" name="rPType" class="custom-control-input" value="s" checked>
+          <label class="custom-control-label" for="qr1">SSQI</label>
+        </div>
+        <div class="custom-control custom-radio" style="display:inline;position: relative;left:40px">
+          <input type="radio" id="qr2" name="rPType" class="custom-control-input" value="c">
+          <label class="custom-control-label" for="qr2">CSQI</label>
+        </div>
       </div>
-      <div class="custom-control custom-radio" style="display:inline;position: relative;left:40px">
-        <input type="radio" id="sr2" name="rSType" class="custom-control-input" value="Lahan Kering">
-        <label class="custom-control-label" for="sr2">Lahan Kering</label>
-      </div>
-      <div class="custom-control custom-radio" style="display:inline;position: relative;left:40px">
-        <input type="radio" id="sr3" name="rSType" class="custom-control-input" value="a">
-        <label class="custom-control-label" for="sr3">Semua</label>
+      <div class="form-group">
+        <h4>Filter berdasarkan jenis tanah</h2>
+        <div class="custom-control custom-radio" style="display:inline;position: relative;left:0px">
+          <input type="radio" id="sr3" name="rSType" class="custom-control-input" value="a" checked>
+          <label class="custom-control-label" for="sr3">Semua</label>
+        </div>
+        <div class="custom-control custom-radio" style="display:inline;position: relative;left:40px">
+          <input type="radio" id="sr1" name="rSType" class="custom-control-input" value="Sawah">
+          <label class="custom-control-label" for="sr1">Sawah</label>
+        </div>
+        <div class="custom-control custom-radio" style="display:inline;position: relative;left:80px">
+          <input type="radio" id="sr2" name="rSType" class="custom-control-input" value="Lahan Kering">
+          <label class="custom-control-label" for="sr2">Lahan Kering</label>
+        </div>
       </div>
     </div>
     <div class="data-wrapper" style="background-color: rgba(76, 175, 80, 0.8);">
@@ -85,6 +98,13 @@
                 <th scope="col">P12</th>
                 <th scope="col">P13</th>
                 <th scope="col">P14</th>
+                <th class="csqi-param" scope="col">P15</th>
+                <th class="csqi-param" scope="col">P16</th>
+                <th class="csqi-param" scope="col">P17a</th>
+                <th class="csqi-param" scope="col">P17b</th>
+                <th class="csqi-param" scope="col">P17c</th>
+                <th class="csqi-param" scope="col">P17d</th>
+                <th class="csqi-param" scope="col">P18</th>
               </tr>
             </thead>
           </table> 

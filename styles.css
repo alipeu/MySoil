@@ -9734,9 +9734,20 @@ html, body {
   position: relative;
   width: 95%;
   height: 80%;
+  bottom: 80px;
   transform: translate(0, 80px);
   margin: auto;
   padding-top: 15px;
+  border-radius: 10px;
+}
+
+.filter-container {
+  text-align: left;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 25px;
+  margin: 25px;
+  width: 40%;
+  border-radius: 10px;
 }
 
 input[type=number]::-webkit-inner-spin-button, 

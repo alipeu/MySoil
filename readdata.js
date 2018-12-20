@@ -1,28 +1,20 @@
 var sparam = 'c';
 
-$("input[name='rPType']").change(function(){
+$("input[name='rPType'], input[name='rSType']").change(function(){
     sparam = $('[name=rPType]:checked').val();
+    var stype = $('[name=rSType]:checked').val();
+    console.log(sparam);
+    if(sparam == 'c') {
+        $('.csqi-param').show();
+    }
     $('tr').each(function() {
         var p = $(this).find('.pType').text();
-        
-        if (p == sparam) {
-            $(this).show();
-        } 
-        else if (p != '') {
-            $(this).hide();
-        }
-    });
-});
-
-$("input[name='rSType']").change(function(){
-    var stype = $('[name=rSType]:checked').val();
-    $('tr').each(function() {
         var s = $(this).find('.sType').text();
         
-        if (s == stype || stype == 'a') {
+        if (p == sparam && (s == stype || stype == 'a')) {
             $(this).show();
         } 
-        else if (s != '') {
+        else if (p != '' && s != '') {
             $(this).hide();
         }
     });
@@ -36,7 +28,6 @@ databaseRef.once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
         var childKey = childSnapshot.key;
         var childData = childSnapshot.val();
-        console.log(childData.sc_flag);
     
         var row = tblSoil.insertRow(rowIndex);
         var cellQual = row.insertCell(0);
@@ -56,9 +47,23 @@ databaseRef.once('value', function(snapshot) {
         var cellP12 = row.insertCell(14);
         var cellP13 = row.insertCell(15);
         var cellP14 = row.insertCell(16);
-        var cellPType = row.insertCell(17);
+        var cellP15 = row.insertCell(17);
+        var cellP16 = row.insertCell(18);
+        var cellP17a = row.insertCell(19);
+        var cellP17b = row.insertCell(20);
+        var cellP17c = row.insertCell(21);
+        var cellP17d = row.insertCell(22);
+        var cellP18 = row.insertCell(23);
+        var cellPType = row.insertCell(24);
         cellSType.setAttribute('class', 'sType');
         cellPType.setAttribute('class', 'pType');
+        cellP15.setAttribute('class', 'csqi-param');
+        cellP16.setAttribute('class', 'csqi-param');
+        cellP17a.setAttribute('class', 'csqi-param');
+        cellP17b.setAttribute('class', 'csqi-param');
+        cellP17c.setAttribute('class', 'csqi-param');
+        cellP17d.setAttribute('class', 'csqi-param');
+        cellP18.setAttribute('class', 'csqi-param');
         cellQual.appendChild(document.createTextNode(childData.soil_ind));
         cellReg.appendChild(document.createTextNode(childData.asal_daerah));
         if(childData.slk_flag == 's') {
@@ -81,9 +86,16 @@ databaseRef.once('value', function(snapshot) {
         cellP12.appendChild(document.createTextNode(childData.p12));
         cellP13.appendChild(document.createTextNode(childData.p13));
         cellP14.appendChild(document.createTextNode(childData.p14));
+        cellP15.appendChild(document.createTextNode(childData.p15));
+        cellP16.appendChild(document.createTextNode(childData.p16));
+        cellP17a.appendChild(document.createTextNode(childData.p17a));
+        cellP17b.appendChild(document.createTextNode(childData.p17b));
+        cellP17c.appendChild(document.createTextNode(childData.p17c));
+        cellP17d.appendChild(document.createTextNode(childData.p17d));
+        cellP18.appendChild(document.createTextNode(childData.p18));
         cellPType.appendChild(document.createTextNode(childData.sc_flag));
 
-        $(".pType").hide();
+        $(".pType, .csqi-param").hide();
 
         rowIndex = rowIndex + 1;
     });

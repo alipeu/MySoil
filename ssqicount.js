@@ -174,7 +174,6 @@ hitungBtn.addEventListener('click', function() {
     }
     
     if(data.p1 && data.p2 && data.p3 && data.p4 && data.p5 && data.p6 && data.p7 && data.p8 && data.p9 && data.p10 && data.p11 && data.p12 && data.p13 && data.p14 && data.asal_daerah) {
-        console.log(data);
         var updates = {};
         updates['/soil/' + sid] = data;
         firebase.database().ref().update(updates).then(function() {

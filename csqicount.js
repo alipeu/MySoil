@@ -1,4 +1,9 @@
 var hitungBtn = document.getElementById('hitungBtn');
+var slk = 's';
+
+$("input[name='rSType']").change(function(){
+    slk = this.value;
+});
 
 hitungBtn.addEventListener('click', function() {
     var sid = firebase.database().ref().child('soil').push().key;
@@ -23,11 +28,10 @@ hitungBtn.addEventListener('click', function() {
     var p17c = document.getElementById('p17c').value;
     var p17d = document.getElementById('p17d').value;
     var p18 = document.getElementById('p18').value;
-    //var ad = document.getElementById('ad').value;
-    //var slk = document.getElementById('slk').value;
-    //var sc = document.getElementById('sc').value;
+    var ad = document.getElementById('ad').value;
+    var date = new Date();
         
-    var cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14,cp15,cp16,cp17,cp18;
+    var cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14, cp15, cp16, cp17, cp18;
     
     //Kedalaman Tanah Efektif
     if(p1 < 5) cp1 = 0 * 0.07;
@@ -50,23 +54,14 @@ hitungBtn.addEventListener('click', function() {
     else cp2 = 0 * 0.07;
 
     //Drainase
-    // if((p3 == 'Sangat cepat' && slk == 's') || (p3 == 'Tergenang' && slk == 'lk')) cp3 = 0 * 0.07;
-    // else if((p3 == 'Cepat' && slk == 's') || (p3 == 'Sangat buruk' && slk == 'lk')) cp3 = 1 * 0.07;
-    // else if((p3 == 'Agak cepat' && slk == 's') || (p3 == 'Buruk' && slk == 'lk')) cp3 = 2 * 0.07;
-    // else if((p3 == 'Sedang' && slk == 's') || (p3 == 'Agak buruk' && slk == 'lk')) cp3 = 3 * 0.07;
-    // else if((p3 == 'Agak buruk' && slk == 's') || (p3 == 'Sedang' && slk == 'lk')) cp3 = 4 * 0.07;
-    // else if((p3 == 'Buruk' && slk == 's') || (p3 == 'Agak cepat' && slk == 'lk')) cp3 = 5 * 0.07;
-    // else if((p3 == 'Sangat buruk' && slk == 's') || (p3 == 'Cepat' && slk == 'lk')) cp3 = 6 * 0.07;
-    // else if((p3 == 'Tergenang' && slk == 's') || (p3 == 'Sangat cepat' && slk == 'lk')) cp3 = 7 * 0.07;
-
-    if((p3 == 'Sangat cepat')) cp3 = 0 * 0.05;
-    else if((p3 == 'Cepat')) cp3 = 1 * 0.05;
-    else if((p3 == 'Agak cepat')) cp3 = 2 * 0.05;
-    else if((p3 == 'Sedang')) cp3 = 3 * 0.05;
-    else if((p3 == 'Agak buruk')) cp3 = 4 * 0.05;
-    else if((p3 == 'Buruk')) cp3 = 5 * 0.05;
-    else if((p3 == 'Sangat buruk')) cp3 = 6 * 0.05;
-    else if((p3 == 'Tergenang')) cp3 = 7 * 0.05;
+    if((p3 == 'Sangat cepat' && slk == 's') || (p3 == 'Tergenang' && slk == 'lk')) cp3 = 0 * 0.05;
+    else if((p3 == 'Cepat' && slk == 's') || (p3 == 'Sangat buruk' && slk == 'lk')) cp3 = 1 * 0.05;
+    else if((p3 == 'Agak cepat' && slk == 's') || (p3 == 'Buruk' && slk == 'lk')) cp3 = 2 * 0.05;
+    else if((p3 == 'Sedang' && slk == 's') || (p3 == 'Agak buruk' && slk == 'lk')) cp3 = 3 * 0.05;
+    else if((p3 == 'Agak buruk' && slk == 's') || (p3 == 'Sedang' && slk == 'lk')) cp3 = 4 * 0.05;
+    else if((p3 == 'Buruk' && slk == 's') || (p3 == 'Agak cepat' && slk == 'lk')) cp3 = 5 * 0.05;
+    else if((p3 == 'Sangat buruk' && slk == 's') || (p3 == 'Cepat' && slk == 'lk')) cp3 = 6 * 0.05;
+    else if((p3 == 'Tergenang' && slk == 's') || (p3 == 'Sangat cepat' && slk == 'lk')) cp3 = 7 * 0.05;
     
     //Tingkat Erosi
     if(p4 == 'Tidak ada') cp4 = 0 * 0.04;
@@ -95,27 +90,27 @@ hitungBtn.addEventListener('click', function() {
     else if(p6 < 12) cp6 = 4 * 0.05;
     else if(p6 < 16) cp6 = 5 * 0.05;
     else if(p6 < 20) cp6 = 6 * 0.05;
-    else if(p6 >= 20) cp6 = 7 * 0.05;
+    else cp6 = 7 * 0.05;
 
     //Permeabilitas - padi sawah
-    if(p7 < 0.025) cp7 = 7 * 0.05;
-    else if(p7 < 0.125) cp7 = 6 * 0.05;
-    else if(p7 < 0.25) cp7 = 5 * 0.05;
-    else if(p7 < 0.5) cp7 = 4 * 0.05;
-    else if(p7 < 2.0) cp7 = 3 * 0.05;
-    else if(p7 < 6.25) cp7 = 2 * 0.05;
-    else if(p7 < 12.5) cp7 = 1 * 0.05;
-    else if(p7 >= 25.0) cp7 = 0;
+    if(p7 < 0.025 && slk == 's') cp7 = 7 * 0.05;
+    else if(p7 < 0.125 && slk == 's') cp7 = 6 * 0.05;
+    else if(p7 < 0.5 && slk == 's') cp7 = 5 * 0.05;
+    else if(p7 < 2.0 && slk == 's') cp7 = 4 * 0.05;
+    else if(p7 < 6.25 && slk == 's') cp7 = 3 * 0.05;
+    else if(p7 < 12.5 && slk == 's') cp7 = 2 * 0.05;
+    else if(p7 < 25.0 && slk == 's') cp7 = 1 * 0.05;
+    else if(p7 >= 25.0 && slk == 's') cp7 = 0;
 
     //Permeabilitas - lahan kering
-    if(p7 < 0.025) cp7 = 0 * 0.05;
-    else if(p7 < 0.125) cp7 = 1 * 0.05;
-    else if(p7 < 0.25) cp7 = 2 * 0.05;
-    else if(p7 < 0.5) cp7 = 3 * 0.05;
-    else if(p7 < 2.0) cp7 = 4 * 0.05;
-    else if(p7 < 6.25) cp7 = 5 * 0.05;
-    else if(p7 < 12.5) cp7 = 6 * 0.05;
-    else if(p7 >= 25.0) cp7 = 7* 0.05;
+    if(p7 < 0.025 && slk == 'lk') cp7 = 0 * 0.05;
+    else if(p7 < 0.125 && slk == 'lk') cp7 = 1 * 0.05;
+    else if(p7 < 0.5 && slk == 'lk') cp7 = 2 * 0.05;
+    else if(p7 < 2.0 && slk == 'lk') cp7 = 3 * 0.05;
+    else if(p7 < 6.25 && slk == 'lk') cp7 = 4 * 0.05;
+    else if(p7 < 12.5 && slk == 'lk') cp7 = 5 * 0.05;
+    else if(p7 < 25.0 && slk == 'lk') cp7 = 6 * 0.05;
+    else if(p7 >= 25.0 && slk == 'lk') cp7 = 7* 0.05;
 
     //pH
     if(p8 < 3.5 || p8 > 9.7) cp8 = 0 * 0.07;
@@ -145,7 +140,7 @@ hitungBtn.addEventListener('click', function() {
     else if(p10 < 60) cp10 = 4 * 0.04;
     else if(p10 < 80) cp10 = 5 * 0.04;
     else if(p10 < 90) cp10 = 6 * 0.04;
-    else if(p10 >= 90 || p10 <100) cp10 = 7 * 0.04;
+    else if(p10 < 100) cp10 = 7 * 0.04;
 
     //N Total
     if(p11 < 0.02) cp11 = 0 * 0.05;
@@ -247,7 +242,7 @@ hitungBtn.addEventListener('click', function() {
     else if(p17d < 0.28 || p17d > 0.31) cp17d = 6;
     else cp17d = 7;
     //Final Average Score
-    cp17 = (cp17a+cp17b+cp17c+cp17d)/4*0.05
+    cp17 = (cp17a + cp17b + cp17c + cp17d) / 4 * 0.05;
 
     // C-Organik
     if(p18 < 0.1) cp18 = 0 * 0.11;
@@ -281,23 +276,24 @@ hitungBtn.addEventListener('click', function() {
         p17c: p17c,
         p17d: p17d,
         p18: p18,
-        //asal_daerah: ad,
-        //slk_flag: slk,
-        //sc_flag: sc,
-        soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14 +cp15+cp16+cp17+cp18).toFixed(2)
+        asal_daerah: ad,
+        slk_flag: slk,
+        sc_flag: 'c',
+        soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14 + cp15 + cp16 + cp17 + cp18).toFixed(2),
+        time: date
     }
     
-    if(data.p1 && data.p2 && data.p3 && data.p4 && data.p5 && data.p6 && data.p7 && data.p8 && data.p9 && data.p10 && data.p11 && data.p12 && data.p13 && data.p14) {
+    if(data.p1 && data.p2 && data.p3 && data.p4 && data.p5 && data.p6 && data.p7 && data.p8 && data.p9 && data.p10 && data.p11 && data.p12 && data.p13 && data.p14 && data.p15 && data.p16 && data.p17a && data.p17b && data.p17c && data.p17d && data.p18) {
         var updates = {};
         updates['/soil/' + sid] = data;
-        firebase.database().ref().update(updates);
-    
-        alert(data.soil_ind);
-        window.location.reload();
+        firebase.database().ref().update(updates).then(function() {
+            alert("Indeks kualitas tanah Anda: " + data.soil_ind);
+            window.location.reload();
+        });
     }
     else {
-        console.log('empty');
         alert('Ada field yang kosong');
+        document.getElementById("warning").style.visibility = "visible";
     }
     
 });
