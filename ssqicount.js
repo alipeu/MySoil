@@ -23,7 +23,7 @@ hitungBtn.addEventListener('click', function() {
     var ad = document.getElementById('ad').value;
     var date = new Date();
         
-    var cp1, cp2, cp3, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13;
+    var cp1, cp2, cp3, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, soil_ind, soil_percentage, soil_quality;
 
     // Kedalaman Tanah Efektif
     if(p1 < 5) cp1 = 0 * 0.09;
@@ -154,6 +154,18 @@ hitungBtn.addEventListener('click', function() {
     else if(p13 < 5.0) cp13 = 6 * 0.12;
     else cp13 = 7 * 0.12;
 
+    //Index Kualitas Tanah
+    soil_ind = cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13
+    soil_percentage = soil_ind / 7 * 100
+
+    if(soil_ind <= 1.0) soil_quality = "Sangat Rendah"
+    else if(soil_ind <= 2.0) soil_quality = "Rendah"
+    else if(soil_ind <= 3.0) soil_quality = "Agak Rendah"
+    else if(soil_ind <= 4.0) soil_quality = "Moderat"
+    else if(soil_ind <= 5.0) soil_quality = "Agak Tinggi"
+    else if(soil_ind <= 6.0) soil_quality = "Tinggi"
+    else soil_quality = "Sangat Tinggi"
+
     var data = {
         p1: p1,
         p2: p2,
@@ -171,7 +183,9 @@ hitungBtn.addEventListener('click', function() {
         asal_daerah: ad,
         slk_flag: slk,
         sc_flag: 's',
-        soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13).toFixed(2),
+        soil_ind: soil_ind.toFixed(2),
+        soil_percentage: (soil_ind / 7 * 100).toFixed(2),
+        soil_quality: soil_quality,
         time: date
     }
     
@@ -179,7 +193,7 @@ hitungBtn.addEventListener('click', function() {
         var updates = {};
         updates['/soil/' + sid] = data;
         firebase.database().ref().update(updates).then(function() {
-            alert("Indeks kualitas tanah Anda: " + data.soil_ind);
+            alert("Indeks kualitas tanah Anda: " + data.soil_ind + " (" + data.soil_percentage + "%)" + "\nKualitas tanah Anda: " + data.soil_quality);
             // window.location.reload();
         });
     }
