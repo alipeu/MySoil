@@ -105,7 +105,7 @@
             <option value="Lempung berdebu">Lempung berdebu</option>
             <option value="Lempung">Lempung</option>
           </select><br>
-          <input id="p5" class="csqi form-control form-control-lg" type="text" placeholder="Kapasitas Menahan Air (air tersedia) (%v/v)" id="inputLarge"><br>
+          <input id="p5" class="persen form-control form-control-lg" type="text" placeholder="Kapasitas Menahan Air (air tersedia) (%v/v)" id="inputLarge"><br>
           <input id="p6" class="csqi form-control form-control-lg" type="text" placeholder="Permeabilitas (cm/jam)" id="inputLarge">
         </div>
       </div>
@@ -113,8 +113,8 @@
         <div class="form-group">
           <input id="p7" class="csqi form-control form-control-lg" type="text" placeholder="pH" id="inputLarge"><br>
           <input id="p8" class="csqi form-control form-control-lg" type="text" placeholder="Kapasitas Tukar Kation (KTK) (me/100 g)" id="inputLarge"><br>
-          <input id="p9" class="csqi form-control form-control-lg" type="text" placeholder="Kejenuhan Basa (KB) (%)" id="inputLarge"><br>
-          <input id="p10" class="csqi form-control form-control-lg" type="text" placeholder="N Total (%)" id="inputLarge"><br>
+          <input id="p9" class="persen form-control form-control-lg" type="text" placeholder="Kejenuhan Basa (KB) (%)" id="inputLarge"><br>
+          <input id="p10" class="persen form-control form-control-lg" type="text" placeholder="N Total (%)" id="inputLarge"><br>
           <input id="p11" class="csqi form-control form-control-lg" type="text" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
           <input id="p12" class="csqi form-control form-control-lg" type="text" placeholder="K dapat dipertukarkan (mg/100g)" id="inputLarge">
         </div>
@@ -123,7 +123,7 @@
           <div class="form-group">
             <input id="p13" class="csqi form-control form-control-lg" type="text" placeholder="Ca dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
             <input id="p14" class="csqi form-control form-control-lg" type="text" placeholder="Mg dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
-            <input id="p15" class="csqi form-control form-control-lg" type="text" placeholder="Kejenuhan Al (%)" id="inputLarge"><br>
+            <input id="p15" class="persen form-control form-control-lg" type="text" placeholder="Kejenuhan Al (%)" id="inputLarge"><br>
             <div style="width: 48%;float: left">
             <input id="p16a" class="csqi form-control form-control-lg" type="text" placeholder="Zn (ppm)" id="inputLarge"><br>
             <input id="p16b" class="csqi form-control form-control-lg" type="text" placeholder="Fe (ppm)" id="inputLarge"><br>
@@ -132,7 +132,7 @@
             <input id="p16c" class="csqi form-control form-control-lg" type="text" placeholder="Mn (ppm)" id="inputLarge"><br>
             <input id="p16d" class="csqi form-control form-control-lg" type="text" placeholder="Cu (ppm)" id="inputLarge"><br>
             </div>
-            <input id="p17" class="csqi form-control form-control-lg" type="text" placeholder="C-organik (%)" id="inputLarge"><br>
+            <input id="p17" class="persen form-control form-control-lg" type="text" placeholder="C-organik (%)" id="inputLarge"><br>
             <!-- <input style="visibility: hidden" id="p9" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
             <input style="visibility: hidden"id="p9" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge"><br> -->
           </div>
@@ -147,6 +147,7 @@
       window.$ = window.jQuery = require('jquery');
       require('./renderer.js')
       require('./csqicount.js')
+      require('./inputsettings.js')
     </script>
   </body>
 </html>
