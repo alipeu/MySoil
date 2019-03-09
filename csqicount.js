@@ -65,8 +65,8 @@ hitungBtn.addEventListener('click', function() {
     //Tekstur
     if(p4 == 'Pasir') cp4 = 1 * 0.07;
     else if(p4 == 'Pasir berlempung') cp4 = 2 * 0.07;
-    else if(p4 == 'Klei (liat) berat') cp4 = 3 * 0.07;
-    else if(p4 == 'Lempung berpasir' || p4 == 'Klei (liat)' || p4 == 'Klei (liat) berpasir') cp4 = 4 * 0.07;
+    else if(p4 == 'Klei(liat) berat') cp4 = 3 * 0.07;
+    else if(p4 == 'Lempung berpasir' || p4 == 'Klei(liat)' || p4 == 'Klei(liat) berpasir') cp4 = 4 * 0.07;
     else if(p4 == 'Klei(liat) berdebu' || p4 == 'Debu' || p4 == 'Lempung berliat') cp4 = 5 * 0.07;
     else if(p4 == 'Lempung klei(liat) berdebu' || p4 == 'Lempung klei(liat) berpasir' || p4 == 'Lempung berdebu') cp4 = 6 * 0.07;
     else if(p4 == 'Lempung') cp4 = 7 * 0.07;
