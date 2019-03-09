@@ -9755,3 +9755,15 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+.input-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.satuanInput {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  color: grey;
+}

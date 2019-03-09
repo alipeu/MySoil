@@ -65,8 +65,14 @@
       </div> -->
       <div class="csqi-l">
         <div class="form-group">
-          <input id="p1" class="form-control form-control-lg" type="text" placeholder="Kedalaman Tanah Efektif (cm)" id="inputLarge"><br>
-          <input id="p2" class="form-control form-control-lg" type="text" placeholder="Kerapatan Isi (g/cm3)" id="inputLarge"><br>
+          <div class="input-container">
+            <input id="p1" class="form-control form-control-lg" type="text" placeholder="Kedalaman Tanah Efektif (cm)" id="inputLarge"><br>
+            <span class="satuanInput">cm</span>
+          </div>
+          <div class="input-container">
+            <input id="p2" class="form-control form-control-lg" type="text" placeholder="Kerapatan Isi (g/cm3)" id="inputLarge"><br>
+            <span class="satuanInput"><sup>g</sup>&frasl;<sub>cm<sup>3</sup></sub></span>
+          </div>
           <select id="p3" class="form-control form-control-lg">
             <option value="" selected="">Drainase</option>
             <option value="Sangat cepat">Sangat cepat</option>
@@ -105,34 +111,81 @@
             <option value="Lempung berdebu">Lempung berdebu</option>
             <option value="Lempung">Lempung</option>
           </select><br>
-          <input id="p5" class="persen form-control form-control-lg" type="text" placeholder="Kapasitas Menahan Air (air tersedia) (%v/v)" id="inputLarge"><br>
-          <input id="p6" class="csqi form-control form-control-lg" type="text" placeholder="Permeabilitas (cm/jam)" id="inputLarge">
+          <div class="input-container">
+            <input id="p5" class="persen form-control form-control-lg" type="text" placeholder="Kapasitas Menahan Air (air tersedia) (%v/v)" id="inputLarge"><br>  
+            <span class="satuanInput"><sup>%v</sup>&frasl;<sub>v</sub></span>
+          </div>
+          <div class="input-container">
+            <input id="p6" class="csqi form-control form-control-lg" type="text" placeholder="Permeabilitas (cm/jam)" id="inputLarge">
+            <span class="satuanInput"><sup>cm</sup>&frasl;<sub>jam</sub></span>
+          </div>
         </div>
       </div>
       <div class="csqi-m">
         <div class="form-group">
           <input id="p7" class="csqi form-control form-control-lg" type="text" placeholder="pH" id="inputLarge"><br>
-          <input id="p8" class="csqi form-control form-control-lg" type="text" placeholder="Kapasitas Tukar Kation (KTK) (me/100 g)" id="inputLarge"><br>
-          <input id="p9" class="persen form-control form-control-lg" type="text" placeholder="Kejenuhan Basa (KB) (%)" id="inputLarge"><br>
-          <input id="p10" class="persen form-control form-control-lg" type="text" placeholder="N Total (%)" id="inputLarge"><br>
-          <input id="p11" class="csqi form-control form-control-lg" type="text" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
-          <input id="p12" class="csqi form-control form-control-lg" type="text" placeholder="K dapat dipertukarkan (mg/100g)" id="inputLarge">
+          <div class="input-container">
+            <input id="p8" class="csqi form-control form-control-lg" type="text" placeholder="Kapasitas Tukar Kation (KTK) (me/100 g)" id="inputLarge"><br>
+            <span class="satuanInput"><sup>me</sup>&frasl;<sub>100g</sub></span>
+          </div>
+          <div class="input-container">
+            <input id="p9" class="persen form-control form-control-lg" type="text" placeholder="Kejenuhan Basa (KB) (%)" id="inputLarge"><br>
+            <span class="satuanInput">%</span>
+          </div>
+          <div class="input-container">
+            <input id="p10" class="persen form-control form-control-lg" type="text" placeholder="N Total (%)" id="inputLarge"><br>
+            <span class="satuanInput">%</span>
+          </div>
+          <div class="input-container">
+            <input id="p11" class="csqi form-control form-control-lg" type="text" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
+            <span class="satuanInput">ppm</span>
+          </div>
+          <div class="input-container">
+            <input id="p12" class="csqi form-control form-control-lg" type="text" placeholder="K dapat dipertukarkan (mg/100g)" id="inputLarge">
+            <span class="satuanInput"><sup>mg</sup>&frasl;<sub>100g</sub></span>
+          </div>
         </div>
       </div>
       <div class="csqi-r">
           <div class="form-group">
-            <input id="p13" class="csqi form-control form-control-lg" type="text" placeholder="Ca dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
-            <input id="p14" class="csqi form-control form-control-lg" type="text" placeholder="Mg dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
-            <input id="p15" class="persen form-control form-control-lg" type="text" placeholder="Kejenuhan Al (%)" id="inputLarge"><br>
-            <div style="width: 48%;float: left">
-            <input id="p16a" class="csqi form-control form-control-lg" type="text" placeholder="Zn (ppm)" id="inputLarge"><br>
-            <input id="p16b" class="csqi form-control form-control-lg" type="text" placeholder="Fe (ppm)" id="inputLarge"><br>
+            <div class="input-container">
+              <input id="p13" class="csqi form-control form-control-lg" type="text" placeholder="Ca dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
+              <span class="satuanInput"><sup>mg</sup>&frasl;<sub>100g</sub></span>
             </div>
-            <div style="width: 48%;float: right">
-            <input id="p16c" class="csqi form-control form-control-lg" type="text" placeholder="Mn (ppm)" id="inputLarge"><br>
-            <input id="p16d" class="csqi form-control form-control-lg" type="text" placeholder="Cu (ppm)" id="inputLarge"><br>
+            <div class="input-container">
+              <input id="p14" class="csqi form-control form-control-lg" type="text" placeholder="Mg dapat dipertukarkan (mg/100g)" id="inputLarge"><br>  
+              <span class="satuanInput"><sup>mg</sup>&frasl;<sub>100g</sub></span>
             </div>
-            <input id="p17" class="persen form-control form-control-lg" type="text" placeholder="C-organik (%)" id="inputLarge"><br>
+            <div class="input-container">
+              <input id="p15" class="persen form-control form-control-lg" type="text" placeholder="Kejenuhan Al (%)" id="inputLarge"><br>
+              <span class="satuanInput">%</span>
+            </div>
+            <div style="display: inline-flex">
+              <div style="width: 48%;float: left;">
+                <div class="input-container">
+                  <input id="p16a" class="csqi form-control form-control-lg" type="text" placeholder="Zn (ppm)" id="inputLarge"><br>
+                  <span class="satuanInput">ppm</span>
+                </div>
+                <div class="input-container">
+                  <input id="p16b" class="csqi form-control form-control-lg" type="text" placeholder="Fe (ppm)" id="inputLarge"><br>
+                  <span class="satuanInput">ppm</span>
+                </div>
+              </div>
+              <div style="width: 48%;float: right;margin-left: 10px">
+                <div class="input-container">
+                  <input id="p16c" class="csqi form-control form-control-lg" type="text" placeholder="Mn (ppm)" id="inputLarge"><br>
+                  <span class="satuanInput">ppm</span>
+                </div>
+                <div class="input-container">
+                  <input id="p16d" class="csqi form-control form-control-lg" type="text" placeholder="Cu (ppm)" id="inputLarge"><br>
+                  <span class="satuanInput">ppm</span>
+                </div>
+              </div>
+            </div>        
+            <div class="input-container">
+                <input id="p17" class="persen form-control form-control-lg" type="text" placeholder="C-organik (%)" id="inputLarge"><br>  
+                <span class="satuanInput">%</span>
+            </div>
             <!-- <input style="visibility: hidden" id="p9" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
             <input style="visibility: hidden"id="p9" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge"><br> -->
           </div>
