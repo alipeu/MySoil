@@ -45,14 +45,14 @@ $('input.persen[type="text"]').inputFilter(function(value) {
   return /^(|0|[1-9]\d*)$/.test(value) && (value === "" || parseInt(value) <= 100); 
 });
 
-// Kedalaman Tanah Efektif SSQI 0-200
-$('input#p1.ssqi[type="text"]').inputFilter(function(value) {
+// Kedalaman Tanah Efektif 0-200
+$('input#p1[type="text"]').inputFilter(function(value) {
     return /^(|0|[1-9]\d*)$/.test(value) && (value === "" || parseInt(value) <= 200); 
 });
 
-// Kerapatan Isi SSQI 0-3.6
-$('input#p2.ssqi[type="text"]').inputFilter(function(value) {
-  return /^\d*[.]?\d*$/.test(value); 
+// Kerapatan Isi 0-3.6
+$('input#p2[type="text"]').inputFilter(function(value) {
+  return /^\d*[.]?\d*$/.test(value) && (value === "" || parseFloat(value) <= 3.6); 
 });
 
 // pH SSQI 1-14
@@ -71,6 +71,9 @@ $('input#p8.ssqi[type="text"]').inputFilter(function(value) {
 });
 
 // K dapat dipertukarkan
+$('input#p2.ssqi[type="text"]').inputFilter(function(value) {
+  return /^\d*[.]?\d*$/.test(value) && (value === "" || parseFloat(value) <= 3.2); 
+});
 
 // Ca dapat dipertukarkan
 $('input#p10.ssqi[type="text"]').inputFilter(function(value) {
@@ -78,5 +81,8 @@ $('input#p10.ssqi[type="text"]').inputFilter(function(value) {
 });
 
 // Mg dapat dipertukarkan
+$('input#p10.ssqi[type="text"]').inputFilter(function(value) {
+  return /^(|0|[1-9]\d*)$/.test(value) && (value === "" || parseInt(value) <= 40); 
+});
 
 // 
