@@ -30,7 +30,7 @@ hitungBtn.addEventListener('click', function() {
     var ad = document.getElementById('ad').value;
     var date = new Date();
         
-    var cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14, cp15, cp16, cp16, cp17;
+    var cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13, cp14, cp15, cp16, cp16, cp17, soil_ind, soil_quality, soil_percentage;
     
     //Kedalaman Tanah Efektif
     if(p1 < 5) cp1 = 0 * 0.07;
@@ -92,14 +92,14 @@ hitungBtn.addEventListener('click', function() {
     else if(p6 >= 25.0 && slk == 's') cp6 = 0;
 
     //Permeabilitas - lahan kering
-    if(p7 < 0.025 && slk == 'lk') cp7 = 0 * 0.05;
-    else if(p7 < 0.125 && slk == 'lk') cp7 = 1 * 0.05;
-    else if(p7 < 0.5 && slk == 'lk') cp7 = 2 * 0.05;
-    else if(p7 < 2.0 && slk == 'lk') cp7 = 3 * 0.05;
-    else if(p7 < 6.25 && slk == 'lk') cp7 = 4 * 0.05;
-    else if(p7 < 12.5 && slk == 'lk') cp7 = 5 * 0.05;
-    else if(p7 < 25.0 && slk == 'lk') cp7 = 6 * 0.05;
-    else if(p7 >= 25.0 && slk == 'lk') cp7 = 7* 0.05;
+    if(p6 < 0.025 && slk == 'lk') cp6 = 0 * 0.05;
+    else if(p6 < 0.125 && slk == 'lk') cp6 = 1 * 0.05;
+    else if(p6 < 0.5 && slk == 'lk') cp6 = 2 * 0.05;
+    else if(p6 < 2.0 && slk == 'lk') cp6 = 3 * 0.05;
+    else if(p6 < 6.25 && slk == 'lk') cp6 = 4 * 0.05;
+    else if(p6 < 12.5 && slk == 'lk') cp6 = 5 * 0.05;
+    else if(p6 < 25.0 && slk == 'lk') cp6 = 6 * 0.05;
+    else if(p6 >= 25.0 && slk == 'lk') cp6 = 7* 0.05;
 
     //pH
     if(p7 < 3.5 || p7 > 9.7) cp7 = 0 * 0.07;
@@ -243,6 +243,18 @@ hitungBtn.addEventListener('click', function() {
     else if(p17 < 5.0) cp17 = 6 * 0.11;
     else cp17 = 7 * 0.11;
 
+    //Index Kualitas Tanah
+    soil_ind = cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14 + cp15 + cp16 + cp17
+    soil_percentage = soil_ind / 7 * 100
+
+    if(soil_ind <= 1.0) soil_quality = "Sangat Rendah"
+    else if(soil_ind <= 2.0) soil_quality = "Rendah"
+    else if(soil_ind <= 3.0) soil_quality = "Agak Rendah"
+    else if(soil_ind <= 4.0) soil_quality = "Moderat"
+    else if(soil_ind <= 5.0) soil_quality = "Agak Tinggi"
+    else if(soil_ind <= 6.0) soil_quality = "Tinggi"
+    else soil_quality = "Sangat Tinggi"
+
     var data = {
         p1: p1,
         p2: p2,
@@ -267,7 +279,9 @@ hitungBtn.addEventListener('click', function() {
         asal_daerah: ad,
         slk_flag: slk,
         sc_flag: 'c',
-        soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14 + cp15 + cp16 + cp17).toFixed(2),
+        soil_ind: soil_ind.toFixed(2),
+        soil_percentage: (soil_ind / 7 * 100).toFixed(2),
+        soil_quality: soil_quality,
         time: date
     }
     
@@ -275,8 +289,8 @@ hitungBtn.addEventListener('click', function() {
         var updates = {};
         updates['/soil/' + sid] = data;
         firebase.database().ref().update(updates).then(function() {
-            alert("Indeks kualitas tanah Anda: " + data.soil_ind);
-            window.location.reload();
+            alert("Indeks kualitas tanah Anda: " + data.soil_ind + " (" + data.soil_percentage + "%)" + "\nKualitas tanah Anda: " + data.soil_quality);
+            // window.location.reload();
         });
     }
     else {
