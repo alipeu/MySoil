@@ -9767,3 +9767,87 @@ input[type=number]::-webkit-outer-spin-button {
   right: 15px;
   color: grey;
 }
+
+:root {
+  --text-color: white;
+  --spinner-color: white;
+  --border-radius:4px;
+}
+
+#hitungBtn {
+  display: inline-block;
+  border:1px solid darken(#93C54B, 50%);
+  outline:none;
+  padding:10px 20px;
+  line-height: 1.4;
+  background: #93C54B; 
+  background: linear-gradient(to bottom, lighten(#93C54B, 20%) 0%, 
+                              lighten(#93C54B,15%) 50%, 
+                              darken(#93C54B,5%) 51%, 
+                              darken(#93C54B,2.5%) 100%);      
+  border-radius: var(--border-radius);
+  border: 1px solid darken(#93C54B, 30%);
+  color: lighten(var(--text-color), 10%);
+  text-shadow: darken(var(--text-color), 80%) -1px -1px 0px;
+  position: relative;
+  transition: padding-right .3s ease;
+  font-weight:700;
+  box-shadow:0 1px 0 lighten(#93C54B, 30%) inset, 0px 1px 0 lighten(#93C54B, 10%);  
+}
+
+#hitungBtn:hover {
+  box-shadow:0 0 10px darken(#93C54B, 10%) inset, 0px 1px 0 lighten(#93C54B, 10%);
+  color:lighten(var(--text-color), 20%);
+}
+
+#hitungBtn:active{
+  box-shadow:0 0 10px darken(#93C54B, 10%) inset, 0px 1px 0 lighten(#93C54B, 10%);
+  color:lighten(var(--text-color), 30%);
+  background: darken(#93C54B, 10%); 
+  background: linear-gradient(to bottom,  lighten(#93C54B, 10%) 0%, lighten(#93C54B, 5%) 50%, darken(#93C54B, 5%) 51%, darken(cornflower, 10%) 100%);    
+}
+
+#hitungBtn.spinning {
+    background-color: #93C54B;
+    padding-right: 40px;
+}
+
+#hitungBtn.spinning:after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  box-shadow: 0px 0px 0 1px darken(#93C54B, 10%);
+  position: absolute;
+  border-radius: 50%;
+  animation: rotate360 .5s infinite linear, exist .1s forwards ease;
+}
+
+#hitungBtn.spinning:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-radius: 50%;
+  right: 6px;
+  top: 50%;
+  position: absolute;
+  border: 2px solid darken(#93C54B, 40%);
+  border-right: 3px solid var(--spinner-color);
+  animation: rotate360 .5s infinite linear, exist .1s forwards ease ;    
+}
+
+@keyframes rotate360 { 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes exist { 
+  100% {
+    width: 15px;
+    height: 15px;
+    margin: -8px 5px 0 0;
+  }
+}
