@@ -21,25 +21,6 @@
   
   
   // Install input filters.
-$("#intTextBox").inputFilter(function(value) {
-    return /^-?\d*$/.test(value); 
-});
-$("#uintTextBox").inputFilter(function(value) {
-    return /^\d*$/.test(value); 
-});
-$("#intLimitTextBox").inputFilter(function(value) {
-    return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 500); 
-});
-$("#floatTextBox").inputFilter(function(value) {
-    return /^-?\d*[.,]?\d*$/.test(value); 
-});
-$("#currencyTextBox").inputFilter(function(value) {
-    return /^-?\d*[.,]?\d{0,2}$/.test(value); 
-});
-$("#hexTextBox").inputFilter(function(value) {
-    return /^[0-9a-f]*$/i.test(value); 
-});
-
 // Persentase 0-100 (N Total, Kapasitas Menahan Air, Kejenuhan Basa, Kejenuhan Al, C-Organik)
 $('input.persen[type="text"]').inputFilter(function(value) {
   return /^(|0|[1-9]\d*)$/.test(value) && (value === "" || parseInt(value) <= 100); 
