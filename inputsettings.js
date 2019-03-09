@@ -50,9 +50,9 @@ $('input#p1.ssqi[type="text"]').inputFilter(function(value) {
     return /^(|0|[1-9]\d*)$/.test(value) && (value === "" || parseInt(value) <= 200); 
 });
 
-// Kerapatan Isi
+// Kerapatan Isi SSQI 0-3.6
 $('input#p2.ssqi[type="text"]').inputFilter(function(value) {
-  return /^(0[.]?\d*|[1-9]*[.]?\d*)$/.test(value); 
+  return /^\d*[.]?\d*$/.test(value); 
 });
 
 // pH SSQI 1-14
