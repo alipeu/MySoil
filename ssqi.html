@@ -70,21 +70,22 @@
           <label class="custom-control-label" for="sr2">Lahan Kering</label>
         </div>
       </div>
-      <!-- <div>
-        <input id="ad" class="form-control form-control-lg" type="number" placeholder="Asal Daerah" id="inputLarge"><br>
-        <input type="radio" id="sr1" name="rSType" value="Sawah" checked>Sawah  
-        <input type="radio" id="sr2" name="rSType" value="Lahan Kering">Lahan Kering  
-      </div> -->
       <div class="ssqi-l">
         <div class="form-group">
+
           <div class="input-container">
-            <input id="p1" class="ssqi form-control form-control-lg" type="text" placeholder="Kedalaman Tanah Efektif (cm)" id="inputLarge" onkeyup="checkInput(this.value)">
+            <label for="p1">Kedalaman Tanah Efektif : 0 - 200 cm</label>
+            <input id="p1" class="ssqi form-control form-control-lg" type="text" id="inputLarge" onkeyup="checkInput(this.value)">
             <span class="satuanInput">cm</span>
           </div><br>
+
           <div class="input-container">
-            <input id="p2" class="ssqi form-control form-control-lg" type="text" placeholder="Kerapatan Isi (g/cm3)" id="inputLarge">
+            <label for="p2">Kerapatan Isi : 0 - 3.6 g/cm3</label>
+            <input id="p2" class="ssqi form-control form-control-lg" type="text" id="inputLarge">
             <span class="satuanInput"><sup>g</sup>&frasl;<sub>cm<sup>3</sup></sub></span>
           </div><br>
+
+          <label for="p3">Kerapatan Isi : 0 - 3.6 g/cm3</label>
           <select id="p3" class="form-control form-control-lg">
             <option value="" selected="">Drainase</option>
             <option value="Sangat cepat">Sangat cepat</option>
@@ -96,18 +97,8 @@
             <option value="Sangat buruk">Sangat buruk</option>
             <option value="Tergenang">Tergenang</option>
           </select><br>
-          <!-- <select id="p4" class="form-control form-control-lg">
-            <option value="" selected="">Erosi</option>
-            <option value="Tidak ada">Tidak ada</option>
-            <option value="Sangat rendah">Sangat rendah</option>
-            <option value="Rendah">Rendah</option>
-            <option value="Agak rendah">Agak rendah</option>
-            <option value="Sedang">Sedang</option>
-            <option value="Agak tinggi">Agak tinggi</option>
-            <option value="Tinggi">Tinggi</option>
-            <option value="Sangat tinggi">Sangat tinggi</option>
-          </select><br> -->
-          <!-- Tekstur Tanah -->
+
+          <label for="p4">Kerapatan Isi : 0 - 3.6 g/cm3</label>
           <select id="p4" class="form-control form-control-lg">
             <option value="" selected="">Tekstur</option>
             <option value="Pasir">Pasir</option>
@@ -124,43 +115,64 @@
             <option value="Lempung berdebu">Lempung berdebu</option>
             <option value="Lempung">Lempung</option>
           </select><br>
-          <input id="p5" class="ssqi form-control form-control-lg" type="text" placeholder="pH" id="inputLarge"><br>
+
+          <label for="p5">pH : 1 - 14</label>
+          <input id="p5" class="ssqi form-control form-control-lg" type="text" id="inputLarge"><br>
+
           <div class="input-container">
-            <input id="p6" class="ssqi form-control form-control-lg" type="text" placeholder="Kapasitas Tukar Kation (me/100 g)" id="inputLarge"><br> 
+            <label for="p6">Kapasitas Tukar Kation : 0 - 160 me/100g</label>
+            <input id="p6" class="ssqi form-control form-control-lg" type="text" id="inputLarge"><br> 
             <span class="satuanInput"><sup>me</sup>&frasl;<sub>100g</sub></span>
           </div>
+
           <div class="input-container">
-            <input id="p7" class="persen form-control form-control-lg" type="text" placeholder="N Total (%)" id="inputLarge">
+            <label for="p7">N Total : 0 - 100%</label>
+            <input id="p7" class="persen form-control form-control-lg" type="text" id="inputLarge">
             <span class="satuanInput">%</span>
           </div>
+
         </div>
       </div>
+
       <div class="ssqi-r">
         <div class="form-group">
+
           <div class="input-container">
-            <input id="p8" class="ssqi form-control form-control-lg" type="text" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
+            <label for="p8">P Tersedia : 0 - 120 ppm</label>
+            <input id="p8" class="ssqi form-control form-control-lg" type="text" id="inputLarge"><br>
             <span class="satuanInput">ppm</span>
           </div>
+
           <div class="input-container">
-            <input id="p9" class="ssqi form-control form-control-lg" type="text" placeholder="K dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
+            <label for="p9">K dapat dipertukarkan :  0 - 3.2 mg/100g</label>
+            <input id="p9" class="ssqi form-control form-control-lg" type="text" id="inputLarge"><br>
             <span class="satuanInput"><sup>mg</sup>&frasl;<sub>100g</sub></span>
           </div>
+
           <div class="input-container">
-            <input id="p10" class="ssqi form-control form-control-lg" type="text" placeholder="Ca dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
+            <label for="p10">Ca dapat dipertukarkan : 0 - 80 mg/100g</label>
+            <input id="p10" class="ssqi form-control form-control-lg" type="text" id="inputLarge"><br>
             <span class="satuanInput"><sup>mg</sup>&frasl;<sub>100g</sub></span>
           </div>
+
           <div class="input-container">
-            <input id="p11" class="ssqi form-control form-control-lg" type="text" placeholder="Mg dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
+            <label for="p11">Mg dapat dipertukarkan : 0 - 40 mg/100g</label>
+            <input id="p11" class="ssqi form-control form-control-lg" type="text" id="inputLarge"><br>
             <span class="satuanInput"><sup>mg</sup>&frasl;<sub>100g</sub></span>
           </div>
+
           <div class="input-container">
-            <input id="p12" class="persen form-control form-control-lg" type="text" placeholder="Kejenuhan Al (%)" id="inputLarge"><br>
+            <label for="p12">Kejenuhan Al 0 - 100 %</label>
+            <input id="p12" class="persen form-control form-control-lg" type="text" id="inputLarge"><br>
             <span class="satuanInput">%</span>
           </div>
+
           <div class="input-container">
-            <input id="p13" class="persen form-control form-control-lg" type="text" placeholder="C-organik (%)" id="inputLarge"><br>
+            <label for="p13">C-organik 0 - 100 %</label>
+            <input id="p13" class="persen form-control form-control-lg" type="text" id="inputLarge"><br>
             <span class="satuanInput">%</span>
           </div>
+
           <input style="visibility: hidden" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge">
         </div>
       </div>
