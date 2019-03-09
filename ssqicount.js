@@ -178,7 +178,7 @@ hitungBtn.addEventListener('click', function() {
         updates['/soil/' + sid] = data;
         firebase.database().ref().update(updates).then(function() {
             alert("Indeks kualitas tanah Anda: " + data.soil_ind);
-            window.location.reload();
+            // window.location.reload();
         });
     }
     else {

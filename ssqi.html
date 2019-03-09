@@ -32,15 +32,15 @@
                 <a class="nav-link" id="logOutBtn">Log Out</a>
               </li> -->
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search">
-              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> -->
+            <!-- <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                   <a class="nav-link" id="logOutBtn" href="#">Log Out</a>
                 </li>
               </ul>
-            </form>
+            </form> -->
           </div>
         </nav>
     <section class="ssqi-container">
@@ -48,7 +48,7 @@
         <h5>*Harap isi semua field yang ada.</h5>
       </span>
       <div class="form-group">
-        <input id="ad" class="form-control form-control-lg" type="text" placeholder="Asal Daerah" id="inputLarge" style="width:50%;display:inline;position:relative;right:40px">
+        <input id="ad" class="form-control form-control-lg" type="text" placeholder="Lokasi Sampel" id="inputLarge" style="width:50%;display:inline;position:relative;right:40px">
         <div class="custom-control custom-radio" style="display:inline;position: relative;left:0px">
           <input type="radio" id="sr1" name="rSType" class="custom-control-input" value="s" checked>
           <label class="custom-control-label" for="sr1">Sawah</label>
@@ -78,7 +78,7 @@
             <option value="Sangat buruk">Sangat buruk</option>
             <option value="Tergenang">Tergenang</option>
           </select><br>
-          <select id="p4" class="form-control form-control-lg">
+          <!-- <select id="p4" class="form-control form-control-lg">
             <option value="" selected="">Erosi</option>
             <option value="Tidak ada">Tidak ada</option>
             <option value="Sangat rendah">Sangat rendah</option>
@@ -88,7 +88,7 @@
             <option value="Agak tinggi">Agak tinggi</option>
             <option value="Tinggi">Tinggi</option>
             <option value="Sangat tinggi">Sangat tinggi</option>
-          </select><br>
+          </select><br> -->
           <select id="p5" class="form-control form-control-lg">
             <option value="" selected="">Tekstur</option>
             <option value="Pasir">Pasir</option>
@@ -106,18 +106,19 @@
             <option value="Lempung">Lempung</option>
           </select><br>
           <input id="p6" class="form-control form-control-lg" type="number" placeholder="pH" id="inputLarge"><br>
-          <input id="p7" class="form-control form-control-lg" type="number" placeholder="Kapasitas Tukar Kation (me/100 g)" id="inputLarge">      
+          <input id="p7" class="form-control form-control-lg" type="number" placeholder="Kapasitas Tukar Kation (me/100 g)" id="inputLarge"><br> 
+          <input id="p8" class="form-control form-control-lg" type="number" placeholder="N Total (%)" id="inputLarge">
         </div>
       </div>
       <div class="ssqi-r">
         <div class="form-group">
-          <input id="p8" class="form-control form-control-lg" type="number" placeholder="N Total (%)" id="inputLarge"><br>
           <input id="p9" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
           <input id="p10" class="form-control form-control-lg" type="number" placeholder="K dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
           <input id="p11" class="form-control form-control-lg" type="number" placeholder="Ca dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
           <input id="p12" class="form-control form-control-lg" type="number" placeholder="Mg dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
           <input id="p13" class="form-control form-control-lg" type="number" placeholder="Kejenuhan Al (%)" id="inputLarge"><br>
-          <input id="p14" class="form-control form-control-lg" type="number" placeholder="C-organik (%)" id="inputLarge">
+          <input id="p14" class="form-control form-control-lg" type="number" placeholder="C-organik (%)" id="inputLarge"><br>
+          <input style="visibility: hidden" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge">
         </div>
       </div>
       <button type="button" class="btn btn-success" id="hitungBtn" style="width:200px;">Hitung</button>

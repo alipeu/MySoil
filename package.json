@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/alipeu/MySoil#readme",
   "devDependencies": {
-    "electron": "^3.0.8"
+    "asar": "^0.14.6",
+    "electron": "^3.0.8",
+    "electron-packager": "^13.0.1"
   },
   "dependencies": {
     "angular": "^1.7.5",
