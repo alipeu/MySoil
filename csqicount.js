@@ -22,11 +22,10 @@ hitungBtn.addEventListener('click', function() {
     var p13 = document.getElementById('p13').value;
     var p14 = document.getElementById('p14').value;
     var p15 = document.getElementById('p15').value;
-    var p16 = document.getElementById('p16').value;
-    var p17a = document.getElementById('p17a').value;
-    var p17b = document.getElementById('p17b').value;
-    var p17c = document.getElementById('p17c').value;
-    var p17d = document.getElementById('p17d').value;
+    var p16a = document.getElementById('p17a').value;
+    var p16b = document.getElementById('p17b').value;
+    var p16c = document.getElementById('p17c').value;
+    var p16d = document.getElementById('p17d').value;
     var p17 = document.getElementById('p17').value;
     var ad = document.getElementById('ad').value;
     var date = new Date();
@@ -260,7 +259,6 @@ hitungBtn.addEventListener('click', function() {
         p13: p13,
         p14: p14,
         p15: p15,
-        p16: p16,
         p16a: p16a,
         p16b: p16b,
         p16c: p16c,
@@ -269,7 +267,7 @@ hitungBtn.addEventListener('click', function() {
         asal_daerah: ad,
         slk_flag: slk,
         sc_flag: 'c',
-        soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14 + cp15 + cp16 + cp17 + cp17).toFixed(2),
+        soil_ind: (cp1 + cp2 + cp3 + cp4 + cp5 + cp6 + cp7 + cp8 + cp9 + cp10 + cp11 + cp12 + cp13 + cp14 + cp15 + cp16 + cp17).toFixed(2),
         time: date
     }
     

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <title>MySoil</title>
     <link rel="stylesheet" href="./styles.css">
-
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script> -->
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
   </head>
   <body>
@@ -65,8 +66,8 @@
       </div> -->
       <div class="ssqi-l">
         <div class="form-group">
-          <input id="p1" class="form-control form-control-lg" type="number" placeholder="Kedalaman Tanah Efektif (cm)" id="inputLarge"><br>
-          <input id="p2" class="form-control form-control-lg" type="number" placeholder="Kerapatan Isi (g/cm3)" id="inputLarge"><br>
+          <input id="p1" class="ssqi form-control form-control-lg" type="text" placeholder="Kedalaman Tanah Efektif (cm)" id="inputLarge"><br>
+          <input id="p2" class="ssqi form-control form-control-lg" type="text" placeholder="Kerapatan Isi (g/cm3)" id="inputLarge"><br>
           <select id="p3" class="form-control form-control-lg">
             <option value="" selected="">Drainase</option>
             <option value="Sangat cepat">Sangat cepat</option>
@@ -89,7 +90,7 @@
             <option value="Tinggi">Tinggi</option>
             <option value="Sangat tinggi">Sangat tinggi</option>
           </select><br> -->
-          <select id="p5" class="form-control form-control-lg">
+          <select id="p4" class="form-control form-control-lg">
             <option value="" selected="">Tekstur</option>
             <option value="Pasir">Pasir</option>
             <option value="Pasir berlempung">Pasir berlempung</option>
@@ -105,19 +106,19 @@
             <option value="Lempung berdebu">Lempung berdebu</option>
             <option value="Lempung">Lempung</option>
           </select><br>
-          <input id="p6" class="form-control form-control-lg" type="number" placeholder="pH" id="inputLarge"><br>
-          <input id="p7" class="form-control form-control-lg" type="number" placeholder="Kapasitas Tukar Kation (me/100 g)" id="inputLarge"><br> 
-          <input id="p8" class="form-control form-control-lg" type="number" placeholder="N Total (%)" id="inputLarge">
+          <input id="p5" class="ssqi form-control form-control-lg" type="text" placeholder="pH" id="inputLarge"><br>
+          <input id="p6" class="ssqi form-control form-control-lg" type="text" placeholder="Kapasitas Tukar Kation (me/100 g)" id="inputLarge"><br> 
+          <input id="p7" class="persen form-control form-control-lg" type="text" placeholder="N Total (%)" id="inputLarge">
         </div>
       </div>
       <div class="ssqi-r">
         <div class="form-group">
-          <input id="p9" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
-          <input id="p10" class="form-control form-control-lg" type="number" placeholder="K dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
-          <input id="p11" class="form-control form-control-lg" type="number" placeholder="Ca dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
-          <input id="p12" class="form-control form-control-lg" type="number" placeholder="Mg dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
-          <input id="p13" class="form-control form-control-lg" type="number" placeholder="Kejenuhan Al (%)" id="inputLarge"><br>
-          <input id="p14" class="form-control form-control-lg" type="number" placeholder="C-organik (%)" id="inputLarge"><br>
+          <input id="p8" class="ssqi form-control form-control-lg" type="text" placeholder="P Tersedia (ppm)" id="inputLarge"><br>
+          <input id="p9" class="ssqi form-control form-control-lg" type="text" placeholder="K dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
+          <input id="p10" class="ssqi form-control form-control-lg" type="text" placeholder="Ca dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
+          <input id="p11" class="ssqi form-control form-control-lg" type="text" placeholder="Mg dapat dipertukarkan (mg/100g)" id="inputLarge"><br>
+          <input id="p12" class="persen form-control form-control-lg" type="text" placeholder="Kejenuhan Al (%)" id="inputLarge"><br>
+          <input id="p13" class="persen form-control form-control-lg" type="text" placeholder="C-organik (%)" id="inputLarge"><br>
           <input style="visibility: hidden" class="form-control form-control-lg" type="number" placeholder="P Tersedia (ppm)" id="inputLarge">
         </div>
       </div>
@@ -131,6 +132,7 @@
       window.$ = window.jQuery = require('jquery');
       require('./renderer.js')
       require('./ssqicount.js')
+      require('./inputsettings.js')
     </script>
   </body>
 </html>

@@ -23,7 +23,7 @@ hitungBtn.addEventListener('click', function() {
     var ad = document.getElementById('ad').value;
     var date = new Date();
         
-    var cp1, cp2, cp3, cp4, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13;
+    var cp1, cp2, cp3, cp5, cp6, cp7, cp8, cp9, cp10, cp11, cp12, cp13;
 
     // Kedalaman Tanah Efektif
     if(p1 < 5) cp1 = 0 * 0.09;
