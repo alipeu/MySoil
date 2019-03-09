@@ -22,10 +22,10 @@ hitungBtn.addEventListener('click', function() {
     var p13 = document.getElementById('p13').value;
     var p14 = document.getElementById('p14').value;
     var p15 = document.getElementById('p15').value;
-    var p16a = document.getElementById('p17a').value;
-    var p16b = document.getElementById('p17b').value;
-    var p16c = document.getElementById('p17c').value;
-    var p16d = document.getElementById('p17d').value;
+    var p16a = document.getElementById('p16a').value;
+    var p16b = document.getElementById('p16b').value;
+    var p16c = document.getElementById('p16c').value;
+    var p16d = document.getElementById('p16d').value;
     var p17 = document.getElementById('p17').value;
     var ad = document.getElementById('ad').value;
     var date = new Date();
